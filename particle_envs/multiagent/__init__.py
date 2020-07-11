@@ -1,7 +1,7 @@
-# from gym.envs.registration import register
+from gym.envs.registration import register
 
-# # Multiagent envs
-# # ----------------------------------------
+# Multiagent envs
+# ----------------------------------------
 
 # register(
 #     id='MultiagentSimple-v0',
