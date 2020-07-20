@@ -246,7 +246,7 @@ class MultiAgentEnv(gym.Env):
 
         results = []
         for i in range(len(self.viewers)):
-            from multiagent import rendering
+            from particle_envs.multiagent import rendering
             # update bounds to center around agent
             cam_range = 1
             if self.shared_viewer:
@@ -260,7 +260,8 @@ class MultiAgentEnv(gym.Env):
             # render to display or array
             results.append(self.viewers[i].render(return_rgb_array = mode=='rgb_array'))
 
-        return results
+            # return results
+            return results[0]
 
     # create receptor field locations in local coordinate frame
     def _make_receptor_locations(self, agent):
