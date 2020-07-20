@@ -41,10 +41,10 @@ class Scenario(BaseScenario):
 
     def reward(self, agent, world):
         dist2 = np.sum(np.square(agent.state.p_pos - world.landmarks[0].state.p_pos))
-        if dist2 > 0.2:
+        if dist2 > 0.01:  # If dist^2 is slightly greater than landmark radius(0.05) 
             return -dist2
         else:
-            return 10
+            return 2
 
     def observation(self, agent, world):
         # get positions of all entities in this agent's reference frame
