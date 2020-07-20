@@ -51,3 +51,14 @@ class Scenario(BaseScenario):
         for entity in world.landmarks:
             entity_pos.append(entity.state.p_pos - agent.state.p_pos)
         return np.concatenate([agent.state.p_vel] + entity_pos)
+
+    def done(self, agent, world):
+        # # Return True if total distance of agents from goal  otherwise return False
+        # if np.sum(np.square(agent.state.p_pos - world.landmarks[0].state.p_pos)) < 0.7:
+        #     return True
+        # else:
+        #     return False
+        if np.any(agent.state.p_pos > 1) or np.any(agent.state.p_pos < -1):
+            return True
+        else:
+            return False
