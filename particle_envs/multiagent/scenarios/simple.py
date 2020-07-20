@@ -35,8 +35,8 @@ class Scenario(BaseScenario):
             agent.state.p_vel = np.zeros(world.dim_p)
             agent.state.c = np.zeros(world.dim_c)
         for i, landmark in enumerate(world.landmarks):
-            # landmark.state.p_pos = np.random.uniform(-1,+1, world.dim_p)
-            landmark.state.p_pos = np.array([0,0])
+            landmark.state.p_pos = np.random.uniform(-1,+1, world.dim_p)
+            # landmark.state.p_pos = np.array([0,0])
             landmark.state.p_vel = np.zeros(world.dim_p)
 
     def reward(self, agent, world):
